@@ -23,18 +23,54 @@
 на вход целое число из отрезка [10, 99] и показывает
 наибольшую цифру числа.*/
 
-Console.Clear();
-Console.WriteLine("Введите число из отрезка [10, 99]: ");
-int number = int.Parse(Console.ReadLine()!);
-    while (number < 10 || number > 99)
-    {
-      Console.WriteLine("Вы ошиблись, \nВведите число из отрезка [10, 99]: ");
-       number = int.Parse(Console.ReadLine()!);  
-    }
-int firstDigit = number/10;
-int secondDigit = number % 10;  
-    if (firstDigit > secondDigit)
-    Console.WriteLine(firstDigit);
-    else
-    Console.WriteLine(secondDigit);
+// Console.Clear();
+// Console.WriteLine("Введите число из отрезка [10, 99]: ");
+// int number = int.Parse(Console.ReadLine()!);
+//     while (number < 10 || number > 99)
+//     {
+//       Console.WriteLine("Вы ошиблись, \nВведите число из отрезка [10, 99]: ");
+//        number = int.Parse(Console.ReadLine()!);  
+//     }
+// int firstDigit = number/10;
+// int secondDigit = number % 10;  
+//     if (firstDigit > secondDigit)
+//     Console.WriteLine(firstDigit);
+//     else
+//     Console.WriteLine(secondDigit);
 
+/*Задача 4: Напишите программу, которая на вход
+принимает натуральное число N, а на выходе
+показывает его цифры через запятую.
+*/
+
+using System.Globalization;
+
+Console.Clear();
+Console.WriteLine("Введите число: ");
+int PlaseNumber(int count, int number, int n)
+{while(n > 0)
+{
+ n = number/count;
+ count = 10*count;
+}
+return count;
+}
+int number = int.Parse(Console.ReadLine()!);
+int count = 1;
+int n =1;
+int r = PlaseNumber(count,number,n);
+Console.WriteLine(r);
+// int digit;
+
+// if (number / count <= 0)
+// {
+// Console.WriteLine(number);
+// }
+// else
+// while(r > 0)
+// {
+//  r = number/count;
+//  digit = number % count;
+//  Console.WriteLine($"digit = {digit}");
+//  count = 10/count;
+// }
