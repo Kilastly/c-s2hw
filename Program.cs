@@ -19,32 +19,22 @@
 // 0 и выдаёт номер координатной четверти плоскости,
 // в которой находится эта точка.
 
+/* Задача 3: Напишите программу, которая принимает
+на вход целое число из отрезка [10, 99] и показывает
+наибольшую цифру числа.*/
+
 Console.Clear();
-Console.WriteLine("Введите координаты точки x");
-int x = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите координаты точки y");
-int y = int.Parse(Console.ReadLine()!);
-if (x > 0 && y > 0)
-{
-    Console.WriteLine("1");
-}
-
-else if (x < 0 && y > 0)
-{
-    Console.WriteLine("2");
-}
-
-else if (x < 0 && y < 0)
-{
-    Console.WriteLine("3");
-}
-else if (x >0 && y < 0)
-{
-    Console.WriteLine("4");
-}
-else
-{
-    Console.WriteLine("Точка на оси координат");
-}
-
+Console.WriteLine("Введите число из отрезка [10, 99]: ");
+int number = int.Parse(Console.ReadLine()!);
+    while (number < 10 || number > 99)
+    {
+      Console.WriteLine("Вы ошиблись, \nВведите число из отрезка [10, 99]: ");
+       number = int.Parse(Console.ReadLine()!);  
+    }
+int firstDigit = number/10;
+int secondDigit = number % 10;  
+    if (firstDigit > secondDigit)
+    Console.WriteLine(firstDigit);
+    else
+    Console.WriteLine(secondDigit);
 
