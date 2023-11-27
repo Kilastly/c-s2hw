@@ -43,34 +43,27 @@
 показывает его цифры через запятую.
 */
 
-using System.Globalization;
-
 Console.Clear();
-Console.WriteLine("Введите число: ");
-int PlaseNumber(int count, int number, int n)
-{while(n > 0)
-{
- n = number/count;
- count = 10*count;
-}
-return count;
-}
+Console.WriteLine("Введите число натуральное число: ");
 int number = int.Parse(Console.ReadLine()!);
-int count = 1;
-int n =1;
-int r = PlaseNumber(count,number,n);
-Console.WriteLine(r);
-// int digit;
-
-// if (number / count <= 0)
-// {
-// Console.WriteLine(number);
-// }
-// else
-// while(r > 0)
-// {
-//  r = number/count;
-//  digit = number % count;
-//  Console.WriteLine($"digit = {digit}");
-//  count = 10/count;
-// }
+if (number < 10)
+{
+    Console.WriteLine(number);
+}
+else
+{
+while(number >  10)
+{
+    int digit = number % 10; //9/7
+    number /= 10; //87//8
+    if(number > 0) //87/8
+    {
+        Console.Write(digit + ",");
+    }
+    else
+    {
+        Console.WriteLine(digit);
+    }
+}
+Console.WriteLine(number);
+}
